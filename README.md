@@ -14,3 +14,6 @@
   
 ./kafka-consumer-groups.sh --bootstrap-server prdvarkafka01.zb:6667,prdvarkafka02.zb:6667,prdvarkafka03.zb:6667,prdvarkafka04.zb:6667 --group evamIB2 --topic ora_finartprod --reset-offsets --to-datetime '2020-02-26T12:01:28.000' --execute
 
+./kafka-configs.sh --zookeeper <host>:2181 --alter --entity-type topics --add-config retention.ms=1000 --entity-name myTopic 
+./kafka-configs.sh --zookeeper <host>:2181 --entity-type topics --describe --entity-name myTopic
+./kafka-configs.sh --zookeeper <host>:2181 --alter --entity-type topics --delete-config retention.ms --entity-name myTopic
