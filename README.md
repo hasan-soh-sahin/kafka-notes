@@ -20,3 +20,5 @@
   
 ./kafka-configs.sh --zookeeper <host>:2181 --alter --entity-type topics --delete-config retention.ms --entity-name myTopic
   
+./kafka-console-consumer.sh --consumer-property group.id=consoleGrup2 --topic myTopic --bootstrap-server host:9092 --from-beginning  
+
