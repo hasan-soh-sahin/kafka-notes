@@ -22,3 +22,20 @@
   
 ./kafka-console-consumer.sh --consumer-property group.id=consoleGrup2 --topic myTopic --bootstrap-server host:9092 --from-beginning  
 
+#check topic size
+
+./kafka-consumer-groups.sh  --list --bootstrap-server host:6667 | grep test_consoleGrup1
+
+./kafka-console-consumer.sh --consumer-property group.id=test_consoleGrup1 --topic myTopic --bootstrap-server host:6667
+
+./kafka-consumer-groups.sh --describe --group test_consoleGrup1 --bootstrap-server host:6667
+
+./kafka-consumer-groups.sh --bootstrap-server host:6667 --group test_consoleGrup1 --topic myTopic --reset-offsets --to-datetime '2020-10-01T00:00:00.000' --execute
+
+./kafka-console-consumer.sh --consumer-property group.id=test_consoleGrup1 --topic myTopic --bootstrap-server host:6667 --from-beginning | more
+
+./kafka-consumer-groups.sh --bootstrap-server host:6667 --group test_consoleGrup1 --topic myTopic --reset-offsets --to-earliest --execute
+
+./kafka-log-dirs.sh --describe --bootstrap-server host:9092  --topic-list myTopic | grep -oP '(?<=size":)\d+' | awk '{ sum += $1 } END { print sum }'
+
+#check topic size
