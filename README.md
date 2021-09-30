@@ -1,3 +1,5 @@
+ ./kafka-topics.sh --list --zookeeper host:2181
+
 ./kafka-topics.sh --create --topic myTopic --zookeeper <host>:2181 --replication-factor 1 --partitions 2
 
 ./kafka-topics.sh --zookeeper <host>:2181 --delete --topic myTopic
