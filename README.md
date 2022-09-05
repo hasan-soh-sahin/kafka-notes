@@ -1,4 +1,4 @@
- ./kafka-topics.sh --list --zookeeper host:2181
+./kafka-topics.sh --list  --bootstrap-server=localhost:9092
 
 ./kafka-topics.sh --create --topic myTopic --zookeeper <host>:2181 --replication-factor 1 --partitions 2
 
