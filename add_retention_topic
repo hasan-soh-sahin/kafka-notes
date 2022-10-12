@@ -1,0 +1,3 @@
+[root@prdvarkafka01 bin]# ./kafka-configs.sh --zookeeper prdvardatamaster01.zb:2181,prdvardatamaster03.zb:2181,prdvardatamaster02.zb:2181 --bootstrap-server prdvarkafka01.zb:6667 --alter --entity-type topics --entity-name intLogLog --add-config retention.ms=3600000
+Only one of --bootstrap-server or --zookeeper must be specified
+
