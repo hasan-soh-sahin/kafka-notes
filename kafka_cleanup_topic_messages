@@ -1,0 +1,2 @@
+./kafka-topics.sh --zookeeper <zookeeper>:2181 --topic <topic> --alter --config retention.ms=1
+./kafka-topics.sh --zookeeper <zookeeper>:2181 --topic <topic> --alter --config retention.ms=604800000
