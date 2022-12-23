@@ -1,0 +1,11 @@
+#create consumer-groups
+./kafka-console-consumer.sh --consumer-property group.id=test_consoleGrup1 --topic kredi_kullandirim --bootstrap-server  prdvarkafka01.zb:6667 
+
+#check current offsets
+./kafka-consumer-groups.sh --describe --group test_consoleGrup1 --bootstrap-server prdvarkafka01.zb:6667
+
+#update offset
+./kafka-consumer-groups.sh --bootstrap-server prdvarkafka01.zb:6667 --group test_consoleGrup1 --topic kredi_kullandirim --reset-offsets --to-datetime '2022-12-22T04:00:00.000' --execute 
+
+#read from offset
+./kafka-console-consumer.sh --consumer-property group.id=test_consoleGrup1 --topic kredi_kullandirim --bootstrap-server  prdvarkafka01.zb:6667 > /tmp/kredi_kullandirim.out
