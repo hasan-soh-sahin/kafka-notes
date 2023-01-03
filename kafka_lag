@@ -1,0 +1,4 @@
+[root@kafka01 bin]# ./kafka-consumer-groups.sh --bootstrap-server kafka01:6667 --describe --group consumer_group1
+
+TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                     HOST            CLIENT-ID
+ora_topic       0          77706683633     77706685677     2044            consumer-2-909e4055-b53c-4d3c-ab6d-2a5bcafa4ef8 /10.11.225.23   consumer-2
