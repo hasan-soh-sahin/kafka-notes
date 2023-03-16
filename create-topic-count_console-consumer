@@ -1,0 +1,10 @@
+[root@bastion bin]# ./kafka-topics.sh  --create  --bootstrap-server 10.1.141.12:32305,10.1.141.12:32306,10.1.141.12:32307  --topic mvt_musteri --replication-factor 1 --partitions 10
+Created topic mvt_musteri.
+
+[root@bastion bin]# ./kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list 10.1.141.12:32305,10.1.141.12:32306,10.1.141.12:32307 --topic mvt_musteri
+mvt_musteri:0:0
+mvt_musteri:1:0
+mvt_musteri:2:0
+mvt_musteri:3:0
+
+[root@bastion bin]#  ./kafka-console-consumer.sh --topic mvt_musteri --bootstrap-server 10.1.141.12:32305,10.1.141.12:32306,10.1.141.12:32307
