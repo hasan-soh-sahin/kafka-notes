@@ -3,3 +3,7 @@ a_topic:0:12312312
 
 
 ./kafka-console-consumer.sh --topic a_topic  --bootstrap-server 10..:32305,10.1..12:32306,10.1....12:32307 --from-beginning
+
+#sum count
+[root@bastion bin]#  ./kafka-run-class.sh kafka.tools.GetOffsetShell   --broker-list 10.1.141.12:32305,10.1.141.12:32306,10.1.141.12:32307  --topic mvt_musteri   | awk -F  ":" '{sum += $3} END {print "Result: "sum}'
+Result: 6912242
