@@ -1,0 +1,13 @@
+[root@prdvarkafka01 bin]# /usr/hdp/3.1.0.0-78/kafka/bin/kafka-topics.sh --zookeeper prdvardatamaster01.zb:2181,prdvardatamaster02.zb:2181,prdvardatamaster03.zb:2181 --delete --topic subeislemkesinti_ozet
+
+[root@prdvarkafka01 bin]# ./zookeeper-shell.sh prdvardatamaster01.zb:2181 ls /admin/delete_topics
+WatchedEvent state:SyncConnected type:None path:null
+
+[root@prdvarkafka01 bin]# ./zookeeper-shell.sh prdvardatamaster01.zb:2181 rmr /admin/delete_topics/subeislemkesinti_ozet
+Connecting to prdvardatamaster01.zb:2181
+WatchedEvent state:SyncConnected type:None path:null
+
+[root@prdvarkafka01 bin]# ./zookeeper-shell.sh prdvardatamaster01.zb:2181 ls /admin/delete_topics
+Connecting to prdvardatamaster01.zb:2181
+WatchedEvent state:SyncConnected type:None path:null
+[]
