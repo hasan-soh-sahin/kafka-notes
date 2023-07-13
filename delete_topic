@@ -1,13 +1,20 @@
-[root@prdvarkafka01 bin]# /usr/hdp/3.1.0.0-78/kafka/bin/kafka-topics.sh --zookeeper prdvardatamaster01.zb:2181,prdvardatamaster02.zb:2181,prdvardatamaster03.zb:2181 --delete --topic subeislemkesinti_ozet
+./kafka-topics.sh --zookeeper k.zb:2181,k.zb:2181 --delete --topic t1
 
-[root@prdvarkafka01 bin]# ./zookeeper-shell.sh prdvardatamaster01.zb:2181 ls /admin/delete_topics
+./zookeeper-shell.sh prdvardatamaster01.zb:2181 ls /admin/delete_topics
+
+./zookeeper-shell.sh prdvardatamaster01.zb:2181 rmr /admin/delete_topics/t1
+
+./zookeeper-shell.sh prdvardatamaster01.zb:2181 ls /admin/delete_topics
+---------------
+
+[root@prdvarkafka01 bin]# ./zookeeper-shell.sh zookeeper:2181 ls /admin/delete_topics
 WatchedEvent state:SyncConnected type:None path:null
 
-[root@prdvarkafka01 bin]# ./zookeeper-shell.sh prdvardatamaster01.zb:2181 rmr /admin/delete_topics/subeislemkesinti_ozet
+[root@prdvarkafka01 bin]# ./zookeeper-shell.sh zookeeper:2181 rmr /admin/delete_topics/t1
 Connecting to prdvardatamaster01.zb:2181
 WatchedEvent state:SyncConnected type:None path:null
 
-[root@prdvarkafka01 bin]# ./zookeeper-shell.sh prdvardatamaster01.zb:2181 ls /admin/delete_topics
+[root@prdvarkafka01 bin]# ./zookeeper-shell.sh zookeeper:2181 ls /admin/delete_topics
 Connecting to prdvardatamaster01.zb:2181
 WatchedEvent state:SyncConnected type:None path:null
 []
