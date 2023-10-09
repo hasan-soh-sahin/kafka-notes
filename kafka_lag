@@ -2,3 +2,11 @@
 
 TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                     HOST            CLIENT-ID
 ora_topic       0          77706683633     77706685677     2044            consumer-2-909e4055-b53c-4d3c-ab6d-2a5bcafa4ef8 /10.11.225.23   consumer-2
+
+
+ 
+[root@prdvardataflow03 bin]# ./kafka-consumer-groups.sh --describe --group test_nifi_ora_finartprod_grup --bootstrap-server prdvarkafka01:6667
+
+TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                      HOST            CLIENT-ID
+topic__1         0          4656401000      4656401044      44              consumer-87-922ecd46-e55d-4e2a-b853-e3d7569aa945 /10.11.116.132  consumer-87
+topic__2         1          4729233250      4729234910      1660            consumer-87-bb04d4ab-aae6-47b0-8ae6-6b8dd58da0c5 /10.11.116.131  consumer-87
