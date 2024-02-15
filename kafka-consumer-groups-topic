@@ -1,0 +1,1 @@
+for f in `./kafka-consumer-groups.sh --bootstrap-server 10.11.152.61:9092 --list`; do ./kafka-consumer-groups.sh --bootstrap-server 10.11.152.61:9092 --describe --group $f; done
